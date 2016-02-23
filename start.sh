@@ -69,7 +69,7 @@ server {
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
 
-    root   $DATA_DIR;
+    root   $DATA_DIR/public;
     index  index.php index.html index.htm;
 
     location / {
@@ -77,7 +77,7 @@ server {
     }
 
     location ~ \.php$ {
-        root           /data/www;
+        root           /data/www/public;
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  /\$document_root\$fastcgi_script_name;
